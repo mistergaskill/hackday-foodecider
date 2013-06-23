@@ -49,6 +49,12 @@ server.use(createRouter(function(router) {
 		session.addChoice(req.body.name);
 		res.json(session);
 	});
+
+	// Delete choice
+	router.delete("/:sid/choices", function(req, res, next) {
+		Session.delete(req.params.sid);
+		res.end();
+	});
 }));
 
 function getSession(req, res, next) {
@@ -56,6 +62,6 @@ function getSession(req, res, next) {
 	res.json(session);
 }
 
-server.listen(8000, function() {
+server.listen(process.env.PORT, function() {
 	console.log("Listening");
 });
