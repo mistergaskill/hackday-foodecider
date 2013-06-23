@@ -76,6 +76,7 @@
 |field		|type				|description						|
 |-----------|-------------------|-----------------------------------|
 |name		|string				|The restuarants name |
+|suggestor		|string				|The person's name |
 
 #### Phone Number
 A 10 digit string of numeric characters representing a phone number.
