@@ -13,13 +13,14 @@ describe("Foodecider", function() {
 			],
 		}, function(err, res, body) {
 			assert.ifError(err);
-			assert.equal(res.status, 200);
-			assert.ok(body.sessionID);
-			assert.ok(body.texted);
-			assert.ok(body.failed);
+			assert.equal(res.statusCode, 200);
+			var response = JSON.parse(body);
+			assert.ok(response.sessionID);
+			assert.ok(response.texted);
+			assert.ok(response.failed);
 
-			assert.equal(body.texted.length, 2);
-			assert.equal(body.failed.length, 2);
+			assert.equal(response.texted.length, 2);
+			assert.equal(response.failed.length, 2);
 			done();
 		});
 	});
