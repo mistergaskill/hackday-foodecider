@@ -27,7 +27,7 @@
 ##### Response Object
 |field		|type			|description									|
 |-----------|---------------|-----------------------------------------------|
-|choices	|string array	|A list of restaurant choices in this session.	|
+|choices	|[choice]() array	|A list of restaurant choices in this session.	|
 
 #### Add a choice
 #### POST `/<sessionID>/choices`
@@ -71,6 +71,11 @@
 |name		|string				|The user's name.					|
 |phone		|[phone number]()	|The user's phone number.			|
 |voted		|boolean			|Whether or not the user has voted.	|
+
+#### Choice Object
+|field		|type				|description						|
+|-----------|-------------------|-----------------------------------|
+|name		|string				|The restuarants name |
 
 #### Phone Number
 A 10 digit string of numeric characters representing a phone number.
