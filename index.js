@@ -51,8 +51,9 @@ server.use(createRouter(function(router) {
 	});
 
 	// Delete choice
-	router.delete("/:sid/choices", function(req, res, next) {
-		Session.delete(req.params.sid);
+	router.delete("/:sid/choices/:name", function(req, res, next) {
+		var session = Session.get(req.params.sid);
+		session.removeChoice(req.params.name);
 		res.end();
 	});
 }));
