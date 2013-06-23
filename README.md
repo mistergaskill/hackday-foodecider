@@ -75,5 +75,5 @@
 #### Phone Number
 A 10 digit string of numeric characters representing a phone number.
 
-[person]: person-object
-[phone number]: ./#phone-number
+[person]: /README.md#person-object
+[phone number]: ./README.md#phone-number
