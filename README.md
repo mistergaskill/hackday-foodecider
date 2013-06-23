@@ -3,17 +3,16 @@
 ## API Specification
 
 ### Create a new foodecider session / Initiate add phase
-### POST <API URL>/
-#### Request
-
+### POST `/`
+#### Request Parameters
 people: <array of people>
-### Response
+### Response Object
 sessionID: <sessionID>
 texted: <array of people>
 failed: <array of people>
 
 ### Get the people and choices for your session.
-### GET <API URL>/<sesssionID>
-#### Response
-people: <array of people>
-choices: <array of choices>
+### GET `/<sesssionID>`
+#### Response Object
+people: array of people
+choices: array of choices
