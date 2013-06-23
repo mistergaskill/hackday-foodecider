@@ -4,8 +4,10 @@ var request = require("request"),
 	assert = require("assert"),
 	API_URL = "http://localhost:8000";
 
-describe("Foodecider", function() {
-	it("should Run this test", function(done) {
+describe("Session", function() {
+	var sessionID;
+
+	it("should create", function(done) {
 		request({
 			url: API_URL + "/",
 			method: "POST",
@@ -24,6 +26,38 @@ describe("Foodecider", function() {
 
 			assert.equal(body.texted.length, 2);
 			assert.equal(body.failed.length, 0);
+
+			sessionID = body.sessionID;
+
+			done();
+		});
+	});
+
+	it("should fetch people", function(done) {
+		request({
+			url: API_URL + "/" + sessionID + "/people",
+			method: "GET",
+			json: true,
+		}, function(err, res, body) {
+			assert.ifError(err);
+			assert.equal(res.statusCode, 200);
+			assert.equal(body.people.length, 2);
+			done();
+		});
+	});
+
+	it("should add choice", function(done) {
+		request({
+			url: API_URL + "/" + sessionID + "/choices",
+			method: "POST",
+			json: {
+				name: "Chipotle",
+			},
+		}, function(err, res, body) {
+			assert.ifError(err);
+			assert.equal(res.statusCode, 200);
+			assert.equal(body.choices.length, 1);
+			assert.equal(body.choices[0], "Chipotle");
 			done();
 		});
 	});

@@ -38,13 +38,30 @@ server.use(createRouter(function(router) {
 		});
 	});
 
-	// Get list of people
-	router.get("/:sid/people", function(req, res, next) {
+	// Get
+	router.get("/:sid", getSession);
+	router.get("/:sid/people", getSession);
+	router.get("/:sid/choices", getSession);
+
+	// Add choice
+	router.post("/:sid/choices", function(req, res, next) {
 		var session = Session.get(req.params.sid);
-		res.json(sesssion);
+		session.addChoice(req.body.name);
+		res.json(session);
+	});
+
+	// Delete choice
+	router.delete("/:sid/choices", function(req, res, next) {
+		Session.delete(req.params.sid);
+		res.end();
 	});
 }));
 
-server.listen(8000, function() {
+function getSession(req, res, next) {
+	var session = Session.get(req.params.sid);
+	res.json(session);
+}
+
+server.listen(process.env.PORT, function() {
 	console.log("Listening");
 });
