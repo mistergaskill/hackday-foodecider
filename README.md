@@ -45,10 +45,10 @@
 
 #### Set votes and vetoes
 ##### POST `/<sessionID>/people/<phone>/votes`
-|argument	|type		|description								|
-|-----------|-----------|-------------------------------------------|
-|votes		|int array	|Array of restaurant indeces to vote for.	|
-|vetoes		|int array	|Array of restaurant indeces to veto.		|
+|argument	|type		|description						|
+|-----------|-----------|-----------------------------------|
+|votes		|choiceID	|Array of restaurants to vote for.	|
+|vetoes		|choiceID	|Array of restaurants to veto.		|
 
 #### Start voting
 ##### POST `/<sesssionID>/start`
