@@ -44,7 +44,7 @@
 |name		|string	|Name of the choice to add.	|
 
 #### Set votes and vetoes
-##### PUT `/<sessionID>/people/<number>/votes
+##### POST `/<sessionID>/people/<phone>/votes`
 |argument	|type		|description								|
 |-----------|-----------|-------------------------------------------|
 |votes		|int array	|Array of restaurant indeces to vote for.	|
@@ -69,7 +69,7 @@
 |field		|type				|description						|
 |-----------|-------------------|-----------------------------------|
 |name		|string				|The user's name.					|
-|number		|[phone number]()	|The user's phone number.			|
+|phone		|[phone number]()	|The user's phone number.			|
 |voted		|boolean			|Whether or not the user has voted.	|
 
 #### Phone Number
