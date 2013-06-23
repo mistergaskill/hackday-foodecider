@@ -24,24 +24,26 @@ server.use(createRouter(function(router) {
 
 	// Create session
 	router.post("/", function(req, res, next) {
+		// Create the session
 		var session = new Session();
 		session.people = req.body.people;
+
+		// Send the session announcement
+		// sms.announceSession(req.body.people);
+
 		res.json({
 			sessionID: session.id,
-			texted: [],
+			texted: session.people,
 			failed: [],
 		});
 	});
 
 	// Get list of people
 	router.get("/:sid/people", function(req, res, next) {
+		var session = Session.get(req.params.sid);
+		res.json(sesssion);
 	});
 }));
-
-var people = createRouter(function(router) {
-	router.get("/foo", function(req, res, next) {
-	});
-});
 
 server.listen(8000, function() {
 	console.log("Listening");

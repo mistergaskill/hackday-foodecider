@@ -1,0 +1,21 @@
+{
+	"es5": true,
+	"node": true,
+	"browser": true,
+	"jquery": true,
+
+	"globalstrict": true,
+	"trailing": true,
+	"camelcase": true,
+	"newcap": true,
+	"indent": 4,
+	"maxstatements": 10,
+	"maxparams": 3,
+	"maxlen": 78,
+	"maxdepth": 3,
+	"eqeqeq": true,
+	"unused": true,
+	"bitwise": true,
+	"forin": true,
+	"immed": true
+}
