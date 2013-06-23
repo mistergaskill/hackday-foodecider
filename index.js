@@ -9,6 +9,13 @@ var server = connect();
 server.use(connect.logger("dev"));
 server.use(connect.json());
 server.use(connect.errorHandler());
+server.use(allowCORS);
+
+// Add CORS header
+function allowCORS(req, res, next) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+	next();
+}
 
 // Helpers
 server.use(function(req, res, next) {
