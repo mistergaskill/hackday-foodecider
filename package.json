@@ -1,0 +1,17 @@
+{
+  "name": "hackday-foodecider",
+  "version": "0.0.0",
+  "description": "Decide where to eat!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mistergaskill/hackday-foodecider.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "06e162ed0d7589e448ca34cc521a1d304fb4dcab"
+}
