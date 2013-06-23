@@ -1,4 +1,4 @@
-## A version of Foodecider made for the APIDays Hackathaon.
+## A version of Foodecider made for the APIDays Hackathon.
 
 ### API Specification
 
@@ -75,5 +75,5 @@
 #### Phone Number
 A 10 digit string of numeric characters representing a phone number.
 
-[person]: README.md#person-object
-[phone number]: README.md#phone-number
+[person]: person-object
+[phone number]: ./#phone-number
