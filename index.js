@@ -41,7 +41,7 @@ server.use(createRouter(function(router) {
 	// Get list of people
 	router.get("/:sid/people", function(req, res, next) {
 		var session = Session.get(req.params.sid);
-		res.json(sesssion);
+		res.json(session);
 	});
 }));
 
