@@ -38,11 +38,10 @@ server.use(createRouter(function(router) {
 		});
 	});
 
-	// Get list of people
-	router.get("/:sid/people", function(req, res, next) {
-		var session = Session.get(req.params.sid);
-		res.json(session);
-	});
+	// Get
+	router.get("/:sid", getSession);
+	router.get("/:sid/people", getSession);
+	router.get("/:sid/choices", getSession);
 
 	// Add choice
 	router.post("/:sid/choices", function(req, res, next) {
@@ -51,6 +50,11 @@ server.use(createRouter(function(router) {
 		res.json(session);
 	});
 }));
+
+function getSession(req, res, next) {
+	var session = Session.get(req.params.sid);
+	res.json(session);
+}
 
 server.listen(8000, function() {
 	console.log("Listening");
