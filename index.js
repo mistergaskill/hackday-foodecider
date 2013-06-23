@@ -43,6 +43,13 @@ server.use(createRouter(function(router) {
 		var session = Session.get(req.params.sid);
 		res.json(session);
 	});
+
+	// Add choice
+	router.post("/:sid/choices", function(req, res, next) {
+		var session = Session.get(req.params.sid);
+		session.addChoice(req.body.name);
+		res.json(session);
+	});
 }));
 
 server.listen(8000, function() {
