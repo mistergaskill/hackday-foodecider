@@ -29,11 +29,11 @@ server.use(createRouter(function(router) {
 		session.people = req.body.people;
 
 		// Send the session announcement
-		sms.announceSession(req.body.people);
+		// sms.announceSession(req.body.people);
 
 		res.json({
 			sessionID: session.id,
-			texted: req.body.people,
+			texted: session.people,
 			failed: [],
 		});
 	});
