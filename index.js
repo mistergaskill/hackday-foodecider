@@ -41,7 +41,7 @@ server.use(createRouter(function(router) {
 		session.people = req.body.people;
 
 		// Send the session announcement
-		// sms.announceSession(req.body.people);
+		sms.announceSession(req.body.people);
 
 		res.json({
 			sessionID: session.id,
@@ -58,7 +58,7 @@ server.use(createRouter(function(router) {
 	// Add choice
 	router.post("/:sid/choices", function(req, res, next) {
 		var session = Session.get(req.params.sid);
-		session.addChoice(req.body.name);
+		session.addChoice(req.body.choice);
 		res.json(session);
 	});
 
@@ -73,7 +73,7 @@ server.use(createRouter(function(router) {
 	router.post("/:sid/start", function(req, res, next) {
 		var session = Session.get(req.params.sid);
 		session.voting = true;
-		// sms.announceVoting();
+		sms.announceVoting(session.people, session.choices);
 		res.end();
 	});
 
