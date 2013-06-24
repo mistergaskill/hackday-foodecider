@@ -4,7 +4,7 @@ var connect = require("connect"),
 	createRouter = require("connect-route"),
 	Session = require("./lib/session"),
 	sms = require("./lib/sms"),
-	parseSMS = require("./lib/parseSMS");
+	parseSMS = require("./parseSMS");
 
 var server = connect();
 
@@ -18,7 +18,7 @@ function allowCORS(req, res, next) {
 	res.setHeader("Access-Control-Allow-Origin", "*");
 
 	if ('OPTIONS' === req.method) {
-		return res.send(200);
+		return res.end(200);
 	}
 
 	next();
