@@ -14,6 +14,11 @@ server.use(allowCORS);
 // Add CORS header
 function allowCORS(req, res, next) {
 	res.setHeader("Access-Control-Allow-Origin", "*");
+
+	if ('OPTIONS' === req.method) {
+		return res.send(200);
+	}
+
 	next();
 }
 
@@ -62,6 +67,10 @@ server.use(createRouter(function(router) {
 		var session = Session.get(req.params.sid);
 		session.removeChoice(req.params.name);
 		res.end();
+	});
+
+	// Start voting
+	router.post(":/sid/start", function(req, res, next) {
 	});
 }));
 
