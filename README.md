@@ -32,9 +32,10 @@
 #### Add a choice
 #### POST `/<sessionID>/choices`
 ##### Request Parameters
-|argument	|type	|description				|
-|-----------|-------|---------------------------|
-|name		|string	|Name of the choice to add.	|
+|argument	|type	|description							|
+|-----------|-------|---------------------------------------|
+|name		|string	|Name of the choice to add.				|
+|suggester	|string	|Name of the person adding the choice.	|
 
 #### Remove a choice
 #### DELETE `/<sessionID>/choices/<name>`
