@@ -13,6 +13,8 @@ server.use(connect.json());
 server.use(connect.errorHandler());
 server.use(allowCORS);
 
+server.use(connect.static(__dirname + "/client"));
+
 // Add CORS header
 function allowCORS(req, res, next) {
 	res.setHeader("Access-Control-Allow-Origin", "http://localhost:8000");

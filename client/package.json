@@ -1,0 +1,24 @@
+{
+  "name": "fooddecider-frontend",
+  "version": "0.0.0",
+  "description": "hackday-fooddecider-frontend ============================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jordangarcia/hackday-fooddecider-frontend.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "acfa3a2c3f7dd9178df6e0a4610dd84230a61cfc",
+  "bugs": {
+    "url": "https://github.com/jordangarcia/hackday-fooddecider-frontend/issues"
+  },
+  "dependencies": {
+    "connect": "~2.7.11",
+    "bouncy": "~3.1.2"
+  }
+}
