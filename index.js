@@ -18,7 +18,7 @@ function allowCORS(req, res, next) {
 	res.setHeader("Access-Control-Allow-Origin", "*");
 
 	if ('OPTIONS' === req.method) {
-		return res.end(200);
+		return res.end();
 	}
 
 	next();
