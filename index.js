@@ -70,7 +70,26 @@ server.use(createRouter(function(router) {
 	});
 
 	// Start voting
-	router.post(":/sid/start", function(req, res, next) {
+	router.post("/:sid/start", function(req, res, next) {
+		var session = Session.get(req.params.sid);
+		session.voting = true;
+		// sms.announceVoting();
+		res.end();
+	});
+
+	router.post("/:sid/end", function(req, res, next) {
+		var session = Session.get(req.params.sid);
+		// sms.announceWinner();
+		res.end();
+	});
+
+	// Set votes/vetoes
+	router.post("/:sid/people/:phone/votes", function(req, res, next) {
+		var session = Session.get(req.params.sid);
+		var phone = req.params.phone;
+		session.setVotes(phone, req.body.votes);
+		session.setVetoes(phone, req.body.vetoes);
+		res.end();
 	});
 }));
 
