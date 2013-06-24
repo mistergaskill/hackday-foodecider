@@ -5,7 +5,7 @@ define(function(require) {
     },
 
     url: function() {
-      return 'http://localhost:8001/' + this.sessionID + '/people';
+      return '/' + this.sessionID + '/people';
     },
 
     hasEveryoneVoted: function() {

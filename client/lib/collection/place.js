@@ -16,8 +16,7 @@ define(function(require) {
     },
 
     url: function() {
-    debugger;
-      return 'http://localhost:8001/' + this.sessionID + '/choices';
+      return '/' + this.sessionID + '/choices';
     },
 
     model: require('model/place')

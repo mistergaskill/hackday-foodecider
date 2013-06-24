@@ -22,7 +22,7 @@ define(function(require) {
 
 
     initializeAddPhase: function() {
-      Backbone.ajax('http://localhost:8001/', {
+      Backbone.ajax('/', {
         type: 'POST',
         data: JSON.stringify(this.collection.toJSON()),
         success: this.callback,

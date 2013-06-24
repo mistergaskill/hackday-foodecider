@@ -51,7 +51,7 @@ define(function(require) {
     },
 
     url: function() {
-      return 'http://localhost:8001/' + this.sessionID + '/end';
+      return '/' + this.sessionID + '/end';
     },
 
     getResult: function() {
