@@ -57,7 +57,7 @@ describe("Session", function() {
 			assert.ifError(err);
 			assert.equal(res.statusCode, 200);
 			assert.equal(body.choices.length, 1);
-			assert.equal(body.choices[0], "Chipotle");
+			assert.equal(body.choices[0].name, "chipotle");
 			done();
 		});
 	});

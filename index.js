@@ -59,8 +59,11 @@ server.use(createRouter(function(router) {
 
 	// Add choice
 	router.post("/:sid/choices", function(req, res, next) {
-		var session = Session.get(req.params.sid);
-		session.addChoice(req.body.choice);
+		var session = Session.get(req.params.sid),
+			choice = req.body;
+
+		choice.name = choice.name.toLowerCase();
+		session.addChoice(choice);
 		res.json(session);
 	});
 
