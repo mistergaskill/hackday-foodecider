@@ -40,7 +40,7 @@ server.use(createRouter(function(router) {
 	router.post("/", function(req, res, next) {
 		// Create the session
 		var session = new Session();
-		session.people = req.body.people;
+		session.addPeople(req.body.people);
 
 		// Send the session announcement
 		sms.announceSession(req.body.people);
@@ -83,6 +83,7 @@ server.use(createRouter(function(router) {
 		var session = Session.get(req.params.sid);
 		var winner = session.getWinner();
 		sms.announceWinner(session.people, session.getWinner());
+		Session.delete(session.id);
 		res.end();
 	});
 
