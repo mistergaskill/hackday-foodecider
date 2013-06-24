@@ -15,7 +15,7 @@ server.use(allowCORS);
 
 // Add CORS header
 function allowCORS(req, res, next) {
-	res.setHeader("Access-Control-Allow-Origin", "http://localhost:8001");
+	res.setHeader("Access-Control-Allow-Origin", "http://localhost:8000");
 	res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 	res.setHeader("Access-Control-Allow-Methods", "*");
 
