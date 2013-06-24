@@ -4,7 +4,7 @@ var connect = require("connect"),
 	createRouter = require("connect-route"),
 	Session = require("./lib/session"),
 	sms = require("./lib/sms"),
-	parseSMS = require("./parseSMS");
+	parseSMS = require("./lib/parseSMS");
 
 var server = connect();
 
