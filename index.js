@@ -9,6 +9,13 @@ var server = connect();
 server.use(connect.logger("dev"));
 server.use(connect.json());
 server.use(connect.errorHandler());
+server.use(allowCORS);
+
+// Add CORS header
+function allowCORS(req, res, next) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+	next();
+}
 
 // Helpers
 server.use(function(req, res, next) {
@@ -51,8 +58,9 @@ server.use(createRouter(function(router) {
 	});
 
 	// Delete choice
-	router.delete("/:sid/choices", function(req, res, next) {
-		Session.delete(req.params.sid);
+	router.delete("/:sid/choices/:name", function(req, res, next) {
+		var session = Session.get(req.params.sid);
+		session.removeChoice(req.params.name);
 		res.end();
 	});
 }));
