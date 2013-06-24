@@ -16,6 +16,8 @@ server.use(allowCORS);
 // Add CORS header
 function allowCORS(req, res, next) {
 	res.setHeader("Access-Control-Allow-Origin", "*");
+	res.setHeader("Access-Control-Allow-Headers", "*");
+	res.setHeader("Access-Control-Allow-Methods", "*");
 
 	if ('OPTIONS' === req.method) {
 		return res.end();
